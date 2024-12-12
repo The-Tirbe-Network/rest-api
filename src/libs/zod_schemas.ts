@@ -34,7 +34,7 @@ export const validate = (schema: z.ZodSchema, source: ValidationSource = 'body')
   };
 };
 
-/* Standard Object Schemas */
+/* Stand alone Schemas (strings, numbers, etc) */
 
 // Phone number
 export const phoneNumberSchema = z.string()
@@ -73,7 +73,7 @@ export const usernameSchema = z.string()
 
 export type Username = z.infer<typeof usernameSchema>;
 
-/* Merged & Extended Schemas */
+/* Object Schemas */
 
 // New Profile
 export const newProfileSchema = z.object({
@@ -103,11 +103,9 @@ export const defaultRegisterSchema = z.object({
 
 export type DefaultRegisterCredentials = z.infer<typeof defaultRegisterSchema>;
 
+/* Modified Schemas */
+
 // Register Via Email Credentials (Email )
 export const registerViaEmailSchema = defaultRegisterSchema.required({ email: true });
 
 export type RegisterViaEmailCredentials = z.infer<typeof registerViaEmailSchema>;
-
-export const registerViaPhoneSchema = defaultRegisterSchema.required({ phone: true, email: true });
-
-export type RegisterViaPhoneCredentials = z.infer<typeof registerViaPhoneSchema>;

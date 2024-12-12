@@ -7,8 +7,6 @@ import {
   phoneNumberSchema,
   RegisterViaEmailCredentials,
   registerViaEmailSchema,
-  RegisterViaPhoneCredentials,
-  registerViaPhoneSchema,
   Username,
   usernameSchema,
   validate
