@@ -1,4 +1,4 @@
-import * as express from 'express';
+import * as Express from 'express';
 
 declare global {
   namespace Express {
@@ -10,10 +10,4 @@ declare global {
       };
     }
   }
-}
-
-// declare namespace Express {
-//   interface Request {
-//     validatedData: any;
-//   }
-// } 
+} 
